@@ -30,6 +30,19 @@ if (number > 0) {
     alert(0); // 0
 };
 
+// или
+
+let number = prompt();
+let message;
+if(number > 0) {
+    message = '1';
+} else if (number < 0) {
+    message = '-1';
+} else {
+    message = '0';
+};
+alert(message);
+
 // 4. Перепишите конструкцию if с использованием условного оператора '?':
 
 let result;
