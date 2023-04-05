@@ -36,3 +36,12 @@ function checkAge(age) {
 // Сделайте два варианта функции checkAge:
 // Используя оператор ?
 // Используя оператор ||
+
+  function checkAge(age) {
+    let (result = (age > 18)) ? true : confirm('Родители разрешили?');
+  }
+
+  // Решение учебника:
+  function checkAge(age) {
+    return (age > 18) ? true : confirm('Родители разрешили?');
+  }
