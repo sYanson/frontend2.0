@@ -6,6 +6,8 @@ user.surname = "Smith"; // Добавьте свойство surname со зна
 user.name = "Pete"; // Измените значение свойства name на Pete.
 delete user.name; // Удалите свойство name из объекта.
 
+//////////////////////////////////////////////////////////////////////////////////////////
+
 // 2. Проверка на пустоту. Напишите функцию isEmpty(obj), которая возвращает true, если у объекта нет свойств, иначе false.
 
 Должно работать так:
@@ -18,29 +20,18 @@ schedule["8:30"] = "get up";
 
 alert( isEmpty(schedule) ); // false
 
-// Мое решение:
+// решение:
 
 let schedule = {}; // у нас есть объект schedule
 
 function = isEmpty(obj) {
-    for (let key in obj) { //перебираем возможные ключи
-        if key === undefined { // если ключи не найдены, должно вернуться undefined
-            alert( isEmpty(obj) ); // true
-}       else {
-            alert( isEmpty(obj) ); // false
+    for (let key in obj) { // 
+return true
 }
-}
+return false
 }
 
-// Решение учебника:
-
-function isEmpty(obj) {
-    for (let key in obj) {
-      // если тело цикла начнет выполняться - значит в объекте есть свойства
-      return false;
-    }
-    return true;
-  }
+/////////////////////////////////////////////////////////////////////////////////
 
 // 3. Можно ли изменить объект, объявленный с помощью const? Как вы думаете?
 
@@ -48,13 +39,16 @@ const user = {
     name: "John"
   };
   
-  // это будет работать?
   user.name = "Pete";
+  
+  // это будет работать?
   // содержимое объекта может быть изменено, значение name изменится c John на Pete:
   
 const user = {
     name: "Pete"
   };
+
+  ////////////////////////////////////////////////////////////////////////////////
 
 // 4. У нас есть объект, в котором хранятся зарплаты нашей команды:
 
@@ -66,4 +60,43 @@ let salaries = {
 // Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
 // Если объект salaries пуст, то результат должен быть 0.
 
-let result = (let (for key in obj)) ? sum[key] : 0 ;
+function counter() {
+    let sum = 0;
+for (let key in salaries) { 
+    sum = sum + salaries[key];
+} return sum; 
+}
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+// 5. Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+
+Например:
+
+// до вызова функции
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+// после вызова функции
+
+menu = {
+  width: 400,
+  height: 600,
+  title: "My menu"
+};
+
+// Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
+// P.S. Используйте typeof для проверки, что значение свойства числовое.
+
+function multiplyNumeric() {
+    for (let key in menu) {
+        if (tupeof menu[key] == 'number') {
+            menu[key] = key*2;
+        }
+    }
+}

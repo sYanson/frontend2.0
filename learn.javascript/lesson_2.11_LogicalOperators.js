@@ -64,13 +64,20 @@ if (null || -1 && 1) alert( 'third' ); // выполнится, -1 (true) поч
 let login = prompt("Кто там?");
 
 if (login === "Админ") {
-    pass = prompt("Пароль?")
+    pass = prompt("Пароль?");
     if (pass === "Я главный") {
-        alert("Здравствуйте!")
+        alert("Здравствуйте!");
+    } else if (login === '' || login === null) {
+        alert("Отменено");
+    } else {
+        alert("Неверный пароль");
     }
-} else if (login = '' || login = null) {
-    alert("Отменено")
+    
+
+} else if (login === '' || login === null) {
+    alert("Отменено");
 } else {
-    alert("Я вас не знаю")
+    alert("Я вас не знаю");
 }
 // Uncaught SyntaxError: Invalid left-hand side in assignment ??
+// 1. вместо сравнения прописал присваивание, работает!
