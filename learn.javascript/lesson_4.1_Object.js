@@ -25,10 +25,10 @@ alert( isEmpty(schedule) ); // false
 let schedule = {}; // у нас есть объект schedule
 
 function = isEmpty(obj) {
-    for (let key in obj) { // 
+    for (let key in obj) { // если ключи(ключ) нашлись, цикл выполнится
 return true
-}
-return false
+} 
+return false 
 }
 
 /////////////////////////////////////////////////////////////////////////////////
@@ -38,10 +38,10 @@ return false
 const user = {
     name: "John"
   };
-  
+
+  // это будет работать?
   user.name = "Pete";
   
-  // это будет работать?
   // содержимое объекта может быть изменено, значение name изменится c John на Pete:
   
 const user = {
@@ -63,7 +63,7 @@ let salaries = {
 function counter() {
     let sum = 0;
 for (let key in salaries) { 
-    sum = sum + salaries[key];
+    sum += salaries[key];
 } return sum; 
 }
 
@@ -93,10 +93,10 @@ menu = {
 // Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
 // P.S. Используйте typeof для проверки, что значение свойства числовое.
 
-function multiplyNumeric() {
-    for (let key in menu) {
-        if (tupeof menu[key] == 'number') {
-            menu[key] = key*2;
+function multiplyNumeric(obj) {
+    for (let key in obj) {
+        if (tupeof (obj[key]) == 'number') {
+            obj[key] *= 2;
         }
     }
 }
