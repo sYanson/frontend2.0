@@ -14,8 +14,8 @@ function camelize(str) {
     let newarr =[];
     for (i = 0; i < arr.length; ++i) {
         if (arr[i] = "-") { // true
-            arr[i+1] = arr[i+1].toUpperCase(); // d-color -> d-Color
-            arr.splice(i, 1); // d-Color -> dColor
+            arr[i+1] = arr[i+1].toUpperCase(); // d-/c/olor -> d-/C/olor
+            arr.splice(i, 1); // d/-/Color -> dColor
         }
         newarr.push(arr[i]);
     }
@@ -47,3 +47,62 @@ function filterRange(arr, a, b) {
 }
 
 //////////////////////////////////////////////////////////////////////////
+
+// 3. Напишите функцию filterRangeInPlace(arr, a, b), которая принимает массив arr
+// и удаляет из него все значения кроме тех, которые находятся между a и b.
+// То есть, проверка имеет вид a ≤ arr[i] ≤ b.
+// Функция должна изменять принимаемый массив и ничего не возвращать.
+// Например:
+
+let arr = [5, 3, 8, 1];
+
+filterRangeInPlace(arr, 1, 4); // удалены числа вне диапазона 1..4
+
+alert( arr ); // [3, 1]
+
+function filterRangeInPlace(arr, a, b) {
+    for (i = 0; i < arr.length; ++i) {
+        if (arr[i] < a || arr[i] > b) {
+            arr.splise(i, 1);
+        }
+    }
+}
+
+// Через map:
+
+///////////////////////////////////////////////////////////////////////////
+
+// 4. Сортировать в порядке по убыванию
+
+let arr = [5, 2, 1, -10, 8];
+// ... ваш код для сортировки по убыванию
+alert( arr ); // 8, 5, 2, 1, -10
+
+arr.sort(function(a,b){ 
+  return a - b
+})
+// (5) [-10, 1, 2, 5, 8]
+
+/////////////////////////////////////////////////////////////////////////////
+
+// 5. Скопировать и отсортировать массив
+// У нас есть массив строк arr. Нужно получить отсортированную копию, но оставить arr неизменённым.
+// Создайте функцию copySorted(arr), которая будет возвращать такую копию.
+
+let arr = ["HTML", "JavaScript", "CSS"];
+
+copySorted(arr); // CSS, HTML, JavaScript
+arr; // HTML, JavaScript, CSS (без изменений)
+
+//
+function copySorted(arr) {
+    let clone = arr.slice(0); //
+    return clone.sort();
+}
+
+copySorted(arr);
+(3) ['CSS', 'HTML', 'JavaScript']
+arr;
+(3) ['HTML', 'JavaScript', 'CSS']
+
+////////////////////////////////////////////////////////////////////////////////
