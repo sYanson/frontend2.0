@@ -169,3 +169,63 @@ function Calculator() {
 // Через forEach
 
 // Через map
+let names = users.map(item => item.name);
+
+// 8. У вас есть массив объектов user, и у каждого из объектов есть name, surname и id.
+// Напишите код, который создаст ещё один массив объектов с параметрами id и fullName, где fullName – состоит из name и surname.
+// Например:
+
+let vasya = { name: "Вася", surname: "Пупкин", id: 1 };
+let petya = { name: "Петя", surname: "Иванов", id: 2 };
+let masha = { name: "Маша", surname: "Петрова", id: 3 };
+
+let users = [ vasya, petya, masha ];
+
+let usersMapped = /* ... ваш код ... */
+
+/*
+usersMapped = [
+  { fullName: "Вася Пупкин", id: 1 },
+  { fullName: "Петя Иванов", id: 2 },
+  { fullName: "Маша Петрова", id: 3 }
+]
+*/
+
+alert( usersMapped[0].id ) // 1
+alert( usersMapped[0].fullName ) // Вася Пупкин
+
+// Итак, на самом деле вам нужно трансформировать один массив объектов в другой. Попробуйте использовать =>. Это небольшая уловка.
+
+//
+let usersMapped = users.map(user => ({fullName: `${user.name} ${user.surname}`, id: user.id}));
+
+//
+function transform() {
+    let userMapped = [];
+    for (i = 0; i < users.length; ++i) {
+        userMapped[i] = {fullname: `${users[i].name} ${users[i].surname}`, id: users[i].id};
+    } return userMapped;
+} // почему не видно массив, а по вызову функции массив получается??
+
+// 9. Отсортировать пользователей по возрасту
+// Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
+
+// Например:
+
+let vasya = { name: "Вася", age: 25 };
+let petya = { name: "Петя", age: 30 };
+let masha = { name: "Маша", age: 28 };
+
+let arr = [ vasya, petya, masha ];
+
+sortByAge(arr);
+
+// теперь: [vasya, masha, petya]
+alert(arr[0].name); // Вася
+alert(arr[1].name); // Маша
+alert(arr[2].name); // Петя
+
+//
+function sortByAge(users) {
+
+}
