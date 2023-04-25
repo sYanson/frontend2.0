@@ -207,25 +207,19 @@ function transform() {
     } return userMapped;
 } // почему не видно массив, а по вызову функции массив получается??
 
-// 9. Отсортировать пользователей по возрасту
-// Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
+// 9. Напишите функцию sortByAge(users), которая принимает массив объектов со свойством age и сортирует их по нему.
 
-// Например:
+function sortByAge(arr) {
+    arr.sort((x, y) => x.age - y.age);
+};
 
-let vasya = { name: "Вася", age: 25 };
-let petya = { name: "Петя", age: 30 };
-let masha = { name: "Маша", age: 28 };
+// 10.
 
-let arr = [ vasya, petya, masha ];
+// 11. Напишите функцию getAverageAge(users), которая принимает массив объектов со свойством age и возвращает средний возраст.
 
-sortByAge(arr);
-
-// теперь: [vasya, masha, petya]
-alert(arr[0].name); // Вася
-alert(arr[1].name); // Маша
-alert(arr[2].name); // Петя
-
-//
-function sortByAge(users) {
-
+function getAverageAge(users) {
+    let sum = 0;
+    for (i = 0; i < users.length; ++i) {
+        sum += users[i].age;
+    } return (sum / users.length);
 }
